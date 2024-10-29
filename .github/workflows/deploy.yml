@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout public repository
+      uses: actions/checkout@v2
+    - name: Checkout private repository
+      uses: actions/checkout@v2
+      with:
+        repository: smart-climate-lab/mobility_harbach
+        token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        path: private-repo
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: pip install -r private-repo/requirements.txt
+    - name: Run script
+      run: python private-repo/generate_html.py
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .
