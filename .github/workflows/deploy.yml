@@ -21,7 +21,7 @@ jobs:
         with:
           repository: smart-climate-lab/mobility_harbach  # Hier private Repository-Namen eintragen
           token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-          path: private-repo
+          path: #private-repo
 
       - name: Set up Python
         uses: actions/setup-python@v4
