@@ -37,7 +37,7 @@ jobs:
         run: |
           cd private-repo
           python generate_html.py  # Ihr Python-Script
-          cp output.html ../public-repo/index.html  # Passen Sie den Dateinamen an
+          cp index.html ../public-repo/index.html  # Passen Sie den Dateinamen an
 
       - name: Commit and push changes
         run: |
