@@ -17,14 +17,15 @@ jobs:
         repository: smart-climate-lab/dashboard
         token: ${{ secrets.PRIVATE_REPO_TOKEN }}
         path: private-repo
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        python-version: '3.x'
+        node-version: '16'
     - name: Install dependencies
-      run: pip install -r private-repo/requirements.txt
+      run: npm install
+      working-directory: private-repo
     - name: Run script
-      run: python private-repo/generate_html.py
+      run: node private-repo/generate_html.js
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
