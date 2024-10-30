@@ -1,38 +1,49 @@
-name: Deploy to GitHub Pages
+name: Generate and Deploy HTML
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'  # Täglich um Mitternacht
+  workflow_dispatch:      # Ermöglicht manuelle Ausführung
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout public repository
-      uses: actions/checkout@v2
-    - name: Checkout private repository
-      uses: actions/checkout@v2
-      with:
-        repository: smart-climate-lab/mobility_harbach
-        token: ${{ secrets.PRIVATE_REPO_TOKEN }}
-        path: private-repo
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-    - name: Install Python dependencies
-      run: pip install -r private-repo/requirements.txt
-      working-directory: private-repo
-    - name: Run Python script
-      run: python private-repo/generate_html.py
-      working-directory: private-repo
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
+      - name: Checkout public repository
+        uses: actions/checkout@v4
+        with:
+          path: public-repo
+
+      - name: Checkout private repository
+        uses: actions/checkout@v4
+        with:
+          repository: smart-climate-lab/mobility_harbach  # Hier private Repository-Namen eintragen
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: private-repo
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          cd private-repo
+          pip install -r requirements.txt  # Falls Sie Abhängigkeiten haben
+
+      - name: Generate HTML
+        run: |
+          cd private-repo
+          python generate_html.py  # Ihr Python-Script
+          cp output.html ../public-repo/index.html  # Passen Sie den Dateinamen an
+
+      - name: Commit and push changes
+        run: |
+          cd public-repo
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add index.html
+          git commit -m "Update HTML content" || echo "No changes to commit"
+          git push
