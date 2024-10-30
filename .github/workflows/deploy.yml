@@ -21,11 +21,16 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16'
-    - name: Install dependencies
-      run: npm install
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install Python dependencies
+      run: pip install -r private-repo/requirements.txt
       working-directory: private-repo
-    - name: Run script
-      run: node private-repo/generate_html.js
+    - name: Run Python script
+      run: python private-repo/generate_html.py
+      working-directory: private-repo
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
