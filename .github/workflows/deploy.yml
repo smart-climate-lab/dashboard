@@ -14,7 +14,7 @@ jobs:
     - name: Checkout private repository
       uses: actions/checkout@v2
       with:
-        repository: smart-climate-lab/mobility_harbach
+        repository: smart-climate-lab/dashboard
         token: ${{ secrets.PRIVATE_REPO_TOKEN }}
         path: private-repo
     - name: Set up Python
