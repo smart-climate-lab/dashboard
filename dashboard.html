@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Harbach</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 15px;
+            flex: 1;
+            max-height: calc(100vh - 100px);
+            overflow: hidden;
+        }
+        .chart {
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .chart img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8em;
+        }
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daten des Mobilitätsknoten hi Harbach</h1>
+    </header>
+    
+    <div class="dashboard">
+        <div class="chart">
+            <img src="https://upload.wikimedia.org/wikipedia/de/thumb/6/6c/Hjulstroem-Diagramm.svg/1200px-Hjulstroem-Diagramm.svg.png" alt="Grafik 1">
+        </div>
+        <div class="chart">
+            <img src="https://survalyzer.com/wp-content/uploads/2022/05/monatliche-durchschnitts.jpeg" alt="Grafik 2">
+        </div>
+        <div class="chart">
+            <img src="https://www.office-kompetenz.de/wp-content/uploads/2021/12/Datenbasis_und_Original-Diagramm.jpg" alt="Grafik 3">
+        </div>
+        <div class="chart">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Yahoo_Transparency_Report_2013.gif" alt="Grafik 4">
+        </div>
+    </div>
+    
+    <footer>
+        © 2024 Stadt Klagenfurt
+    </footer>
+</body>
+</html>
