@@ -33,6 +33,7 @@ header {
     flex: 1;
     max-height: calc(100vh - 100px);
     overflow: hidden;
+    margin-bottom: 8px
 }
 .chart {
     background-color: white;
