@@ -27,12 +27,6 @@ jobs:
     - name: Run script
       run: python private-repo/Main_harbach.py ../public-repo/images
           
-    - name: Copy images
-      run: |
-        mkdir -p public-repo/images
-        cp private-repo/speedometer.png public-repo/images/
-        cp private-repo/Crosswalks.png public-repo/images/
-        cp private-repo/Modal_split.png public-repo/images/
     - name: Push public changes
       run: |
         cd public-repo
