@@ -22,16 +22,16 @@
         }
         header {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background-color: #007bff;
             color: white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .dashboard {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            padding: 20px;
+            padding: 15px;
             flex: 1;
             max-height: calc(100vh - 100px);
             overflow: hidden;
@@ -44,8 +44,7 @@
             align-items: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             overflow: hidden;
-            flex: 1 1 calc(50% - 30px);
-            max-width: calc(50% - 30px);
+            height: 300px; /* Angepasste Höhe für die Diagramme */
         }
         .chart img {
             max-width: 100%;
@@ -54,25 +53,21 @@
         }
         .chart h2 {
             margin: 10px 0;
-            font-size: 1.2em;
+            font-size: 1.1em; /* Angepasste Schriftgröße */
             color: #333;
         }
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
             font-size: 0.8em;
             box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
         @media (max-width: 768px) {
             .dashboard {
-                flex-direction: column;
-                align-items: center;
-            }
-            .chart {
-                flex: 1 1 calc(100% - 30px);
-                max-width: calc(100% - 30px);
+                grid-template-columns: 1fr;
+                max-height: none;
             }
         }
     </style>
