@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+header {
+    text-align: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+    flex: 1;
+    max-height: calc(100vh - 100px);
+    overflow: hidden;
+}
+.chart {
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 300px;
+}
+.chart img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.chart h2 {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        max-height: none;
+    }
+}
+@media (max-width: 480px) {
+    .chart {
+        height: 200px;
+    }
+}
