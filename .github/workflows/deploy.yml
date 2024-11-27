@@ -36,7 +36,8 @@ jobs:
     - name: Push public changes
       run: |
         cd public-repo
-        git add 'Crosswalks.png', 'Modal_split.png' private-repo/ speedometer.png
+        ls -l Crosswalks.png Modal_split.png private-repo/ speedometer.png
+        git add Crosswalks.png Modal_split.png private-repo/ speedometer.png
         git commit -m "Add images and private-repo directory"
         git push origin main
 
