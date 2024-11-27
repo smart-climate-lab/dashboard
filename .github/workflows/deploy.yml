@@ -27,22 +27,13 @@ jobs:
 
     - name: Run script
       run: python private-repo/Main_harbach.py
-
+          
     - name: Copy images
       run: |
         mkdir -p public-repo/images
         cp private-repo/speedometer.png public-repo/images/
         cp private-repo/Crosswalks.png public-repo/images/
         cp private-repo/Modal_split.png public-repo/images/
-
-    - name: Push private changes
-      run: |
-        cd private-repo
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m "Update images"
-        git push
 
     - name: Push public changes
       run: |
