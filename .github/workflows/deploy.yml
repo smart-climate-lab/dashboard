@@ -27,7 +27,7 @@ jobs:
 
     - name: Run script
       run: python private-repo/Main_harbach.py
-          
+
     - name: Copy images
       run: |
         mkdir -p public-repo/images
