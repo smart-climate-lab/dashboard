@@ -31,9 +31,9 @@ jobs:
     - name: Copy images
       run: |
         mkdir -p public-repo/images
-        cp private-repo/images/speedometer.png public-repo/images/
-        cp private-repo/images/Crosswalks.png public-repo/images/
-        cp private-repo/images/Modal_split.png public-repo/images/
+        cp private-repo/speedometer.png public-repo/images/
+        cp private-repo/Crosswalks.png public-repo/images/
+        cp private-repo/Modal_split.png public-repo/images/
 
     - name: Push changes
       run: |
