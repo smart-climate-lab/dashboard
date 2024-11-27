@@ -1,4 +1,9 @@
-* {
+@media (max-width: 480px) {
+    .chart {
+        height: 200px;
+    }
+}
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
