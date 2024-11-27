@@ -28,6 +28,7 @@ header {
 .dashboard {
     display: grid;
     grid-row-gap: 5px;
+    grid-column-gap: 5px
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     padding: 15px;
