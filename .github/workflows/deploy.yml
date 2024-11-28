@@ -31,13 +31,15 @@ jobs:
         pip install -r private-repo/requirements.txt
 
     - name: Run script and generate images
-      run: python private-repo/Main_harbach.py public-repo/images
+      run: python private-repo/Main_harbach.py
 
-    - name: Commit and push changes
+    - name: List files
+      run: ls -la
+
+    - name: Commit and push plot
       run: |
-        cd public-repo
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add images
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update images"
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add CrossingEvents.png
+        git commit -m "Add generated plot"
         git push
