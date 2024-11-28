@@ -36,20 +36,4 @@ jobs:
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
-          
-    - name: Copy images
-      run: |
-        mkdir -p public-repo/images
-        cp private-repo/speedometer.png public-repo/images/
-        cp private-repo/Crosswalks.png public-repo/images/
-        cp private-repo/Modal_split.png public-repo/images/
-    - name: Push public changes
-      run: |
-        cd public-repo
-        git config --global user.name 'smart-climate-lab'
-        git config --global user.email 'patrick.weiss.klagenfurt@gmail.com'
-        git add Crosswalks.png speedometer.png Modal_split.png
-        git commit -m "Update images"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        
