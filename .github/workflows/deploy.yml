@@ -34,10 +34,6 @@ jobs:
 
     - name: Checkout public repository
       uses: actions/checkout@v2
-      with:
-        repository: smart-climate-lab/public-repo
-        token: ${{ secrets.PUBLIC_REPO_TOKEN }}
-        path: public-repo
 
     - name: Copy plot to public repository
       run: |
