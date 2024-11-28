@@ -31,7 +31,7 @@ jobs:
       run: |
         git config --global user.name 'smart-climate-lab'
         git config --global user.email 'patrick.weiss.klagenfurt@gmail.com'
-        git add Crosswalks.png speedometer.png Modal_split.png
+        git add Crosswalks.png speedometer.png Modal_split.png cars_total.png
         git commit -m "Add generated plot"
         git push
       env:
