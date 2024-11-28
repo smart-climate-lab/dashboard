@@ -7,12 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Checkout public repo
-      uses: actions/checkout@v4
-      with:
-        path: public-repo
-
     - name: Checkout private repo
       uses: actions/checkout@v4
       with:
@@ -35,6 +31,17 @@ jobs:
 
     - name: List files
       run: ls -la
+
+    - name: Checkout public repository
+      uses: actions/checkout@v2
+      with:
+        repository: smart-climate-lab/public-repo
+        token: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        path: public-repo
+
+    - name: Copy plot to public repository
+      run: |
+        cp CrossingEvents.png public-repo/
 
     - name: Commit and push plot
       run: |
