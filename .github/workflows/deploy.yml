@@ -35,7 +35,7 @@ jobs:
 
     - name: Verify plot generation
       run: |
-        if [ -f "private-repo/Test.png" ]; then
+        if [ -f "private-repo/Crosswalks.png" ]; then
           echo "Plot generated successfully"
         else
           echo "Plot generation failed"
