@@ -27,3 +27,12 @@ jobs:
 
     - name: List files
       run: ls -la
+      
+    - name: Verify plot generation
+      run: |
+        if [ -f "CrossingEvents.png" ]; then
+          echo "Plot generated successfully"
+        else
+          echo "Plot generation failed"
+          exit 1
+        fi
