@@ -50,7 +50,9 @@ jobs:
 
     - name: Copy plot to public repository
       run: |
-        cp private-repo/Test.png public-repo/
+        cp private-repo/speedometer.png public-repo/images/
+        cp private-repo/Crosswalks.png public-repo/images/
+        cp private-repo/Modal_split.png public-repo/images/
 
     - name: Commit and push plot
       run: |
