@@ -63,4 +63,4 @@ jobs:
         git commit -m "Add generated plot"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
