@@ -26,6 +26,16 @@ jobs:
         pip install -r private-repo/requirements.txt
     - name: Run script
       run: python private-repo/Main_harbach.py
+
+    - name: Commit and push plot
+      run: |
+        git config --global user.name 'smart-climate-lab'
+        git config --global user.email 'patrick.weiss.klagenfurt@gmail.com'
+        git add Test.png
+        git commit -m "Add generated plot"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
           
     - name: Copy images
       run: |
@@ -42,4 +52,4 @@ jobs:
         git commit -m "Update images"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
