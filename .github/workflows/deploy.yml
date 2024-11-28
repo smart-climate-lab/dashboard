@@ -38,8 +38,8 @@ jobs:
 
     - name: Commit and push plot
       run: |
-        git config --smart-climate-lab 'github-actions[bot]'
-        git config --patrick.weiss.klagenfurt@gmail.com 'github-actions[bot]@users.noreply.github.com'
+        git config --global user.name 'smart-climate-lab'
+        git config --global user.email 'patrick.weiss.klagenfurt@gmail.com'
         git add CrossingEvents.png
         git commit -m "Add generated plot"
         git push
