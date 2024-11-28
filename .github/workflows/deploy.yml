@@ -1,4 +1,5 @@
 name: Upload Images
+
 on:
   schedule:
     - cron: '0 * * * *'
@@ -7,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout private repo
       uses: actions/checkout@v4
@@ -21,7 +22,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies 
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r private-repo/requirements.txt
@@ -30,11 +31,11 @@ jobs:
       run: python private-repo/Main_harbach.py
 
     - name: List files
-      run: ls -la
+      run: ls -la private-repo/
 
     - name: Verify plot generation
       run: |
-        if [ -f "Test.png" ]; then
+        if [ -f "private-repo/Test.png" ]; then
           echo "Plot generated successfully"
         else
           echo "Plot generation failed"
@@ -44,18 +45,20 @@ jobs:
     - name: Checkout public repository
       uses: actions/checkout@v2
       with:
-         repository: smart-climate-lab/public-repo
+        repository: smart-climate-lab/public-repo
+        path: public-repo
 
     - name: Copy plot to public repository
       run: |
-        cp CrossingEvents.png public-repo/
+        cp private-repo/Test.png public-repo/
 
     - name: Commit and push plot
       run: |
+        cd public-repo
         git config --global user.name 'smart-climate-lab'
         git config --global user.email 'patrick.weiss.klagenfurt@gmail.com'
-        git add CrossingEvents.png
+        git add Test.png
         git commit -m "Add generated plot"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}      
+        GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
