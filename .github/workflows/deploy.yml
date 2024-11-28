@@ -23,7 +23,7 @@ jobs:
         pip install pandas matplotlib
 
     - name: Generate plot
-      run: python generate_plot.py
+      run: python private-repo/Main_harbach.py
 
     - name: List files
       run: ls -la
