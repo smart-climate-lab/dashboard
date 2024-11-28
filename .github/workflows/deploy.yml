@@ -10,57 +10,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout public repo
+      uses: actions/checkout@v2
+
     - name: Checkout private repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
       with:
         repository: smart-climate-lab/mobility_harbach
         token: ${{ secrets.PRIVATE_REPO_TOKEN }}
         path: private-repo
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
+    - name: Install dependencies 
       run: |
         python -m pip install --upgrade pip
         pip install -r private-repo/requirements.txt
-
-    - name: Run script and generate images
+    - name: Run script
       run: python private-repo/Main_harbach.py
-
-    - name: List files
-      run: ls -la private-repo/
-
-    - name: Verify plot generation
+          
+    - name: Copy images
       run: |
-        if [ -f "private-repo/Crosswalks.png" ]; then
-          echo "Plot generated successfully"
-        else
-          echo "Plot generation failed"
-          exit 1
-        fi
-
-    - name: Checkout public repository
-      uses: actions/checkout@v2
-      with:
-        repository: smart-climate-lab/public-repo
-        path: public-repo
-
-    - name: Copy plot to public repository
-      run: |
+        mkdir -p public-repo/images
         cp private-repo/speedometer.png public-repo/images/
         cp private-repo/Crosswalks.png public-repo/images/
         cp private-repo/Modal_split.png public-repo/images/
-
-    - name: Commit and push plot
+    - name: Push public changes
       run: |
         cd public-repo
         git config --global user.name 'smart-climate-lab'
         git config --global user.email 'patrick.weiss.klagenfurt@gmail.com'
-        git add Test.png
-        git commit -m "Add generated plot"
+        git add .
+        git commit -m "Update images"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
