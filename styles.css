@@ -18,7 +18,7 @@
         font-size: 0.7em;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .chart1, .chart2, .chart3, .chart4 {
+    .chart1, .chart2, .chart4 {
         height: auto; /* Passt die Höhe dynamisch an */
         max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
         background-color: #ffffff;
@@ -29,12 +29,32 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         overflow: hidden;
     }
-    .chart1 h2, .chart2 h2, .chart3 h2, .chart4 h2 {
+    .chart1 h2, .chart2 h2, .chart4 h2 {
         font-size: 0.7em;
     }
-    .chart1 img, .chart2 img, .chart3 img, .chart4 img {
+    .chart1 img, .chart2 img, .chart4 img {
         width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
         height: auto; /* Passt die Höhe dynamisch an */
+        object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
+        }
+    .chart3 {
+        height: auto; /* Passt die Höhe dynamisch an */
+        max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
+        background-color: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        }
+    .chart3 h2 {
+         text-align: center;
+         font-size: 0.7em;}
+
+    .chart3 img {
+        width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
+        height: 85%; /* Passt die Höhe dynamisch an */
         object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
     }
     .dashboard {
