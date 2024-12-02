@@ -326,31 +326,97 @@
         font-size: 1.3em;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .chart {
-        height: 100%; /* Passt die Höhe dynamisch an */
-        max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
+    .chart1  {
+        height: 100%;
+        max-height: 100%;
         background-color: #ffffff;
         border-radius: 8px;
         align-items: center;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         overflow: hidden;
     }
-    .chart h2 {
+    .chart1 h2 {
+        text-align: center;
         font-size: 1.5em;
     }
-    .chart img {
-        width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
-        height: 95%; /* Passt die Höhe dynamisch an */
-        object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
+    .chart1 img {
+        display: block;
+        margin-top: 50px;
+        margin-left: 5%;
+        width: auto;
+        height: auto;
     }
+    .chart2 {
+        height: 100%;
+        max-height: 100%;
+        background-color: #ffffff;
+        border-radius: 8px;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .chart2 h2 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .chart2 img {
+        display: block;
+        margin-top: -25px;
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+        }
+
+    .chart3 {
+        height: 100%;
+        max-height: 100%;
+        background-color: #ffffff;
+        border-radius: 8px;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .chart3 h2 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .chart3 img {
+        display: block;
+        margin: 0;
+        width: 100%;
+        height: 80%;
+        object-fit: scale-down;
+        }
+
+    .chart4 {
+        height: 100%;
+        max-height: 100%;
+        background-color: #ffffff;
+        border-radius: 8px;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .chart4 h2 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .chart4 img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 85%;
+        object-fit: contain;
+    }
+
     .dashboard {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Zwei Spalten für die Desktop Ansicht */
-        gap: 0.5%; /* Größerer Abstand zwischen den Charts */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5%;
         padding: 1%;
         flex: 1;
         max-height: calc(830px);
-        overflow: auto; /* Ermöglicht Scrollen auf kleinen Bildschirmen */
+        overflow: hidden;
     }
     footer {
         position: fixed;
