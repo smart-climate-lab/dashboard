@@ -18,7 +18,7 @@
         font-size: 0.7em;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .chart {
+    .chart1, .chart2, .chart3, .chart4 {
         height: auto; /* Passt die Höhe dynamisch an */
         max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
         background-color: #ffffff;
@@ -29,10 +29,10 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         overflow: hidden;
     }
-    .chart h2 {
+    .chart1 h2, .chart2 h2, .chart3 h2, .chart4 h2 {
         font-size: 0.7em;
     }
-    .chart img {
+    .chart1 img, .chart2 img, .chart3 img, .chart4 img {
         width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
         height: auto; /* Passt die Höhe dynamisch an */
         object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
@@ -79,7 +79,7 @@
             font-size: 0.7em;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .chart {
+        .chart1, .chart2, .chart3, .chart4 {
             height: auto; /* Passt die Höhe dynamisch an */
             max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
             background-color: #ffffff;
@@ -90,10 +90,10 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             overflow: hidden;
         }
-        .chart h2 {
+        .chart1 h2, .chart2 h2, .chart3 h2, .chart4 h2 {
             font-size: 0.7em;
         }
-        .chart img {
+        .chart1 img, .chart2 img, .chart3 img, .chart4 img {
             width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
             height: auto; /* Passt die Höhe dynamisch an */
             object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
@@ -140,7 +140,7 @@
         font-size: 1.1em;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .chart {
+    .chart1, .chart2, .chart3, .chart4 {
         height: auto; /* Passt die Höhe dynamisch an */
         max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
         background-color: #ffffff;
@@ -151,10 +151,10 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         overflow: hidden;
     }
-    .chart h2 {
+    .chart1 h2, .chart2 h2, .chart3 h2, .chart4 h2 {
         font-size: 1.4em;
     }
-    .chart img {
+    .chart1 img, .chart2 img, .chart3 img, .chart4 img {
         width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
         height: auto; /* Passt die Höhe dynamisch an */
         object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
@@ -201,7 +201,7 @@
         font-size: 1.3em;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .chart {
+    .chart1, .chart2, .chart3, .chart4 {
         height: auto; /* Passt die Höhe dynamisch an */
         max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
         background-color: #ffffff;
@@ -212,10 +212,10 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         overflow: hidden;
     }
-    .chart h2 {
+    .chart1 h2, .chart2 h2, .chart3 h2, .chart4 h2 {
         font-size: 1.8em;
     }
-    .chart img {
+    .chart1 img, .chart2 img, .chart3 img, .chart4 img {
         width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
         height: auto; /* Passt die Höhe dynamisch an */
         object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
@@ -263,7 +263,7 @@
         font-size: 1.3em;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    .chart {
+     .chart1, .chart2, .chart3, .chart4 {
         height: auto; /* Passt die Höhe dynamisch an */
         max-height: 100%; /* Begrenzt die Höhe auf 100% des verfügbaren Platzes */
         background-color: #ffffff;
@@ -274,10 +274,10 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         overflow: hidden;
     }
-    .chart h2 {
+    .chart1 h2, .chart2 h2, .chart3 h2, .chart4 h2 {
         font-size: 1.8em;
     }
-    .chart img {
+    .chart1 img, .chart2 img, .chart3 img, .chart4 img {
         width: 100%; /* Stellt sicher, dass die Bilder die volle Breite einnehmen */
         height: auto; /* Passt die Höhe dynamisch an */
         object-fit: contain; /* Stellt sicher, dass die Bilder nicht abgeschnitten werden */
@@ -307,7 +307,7 @@
 
 
 /* KMG Screen */
-@media only screen and (width: 1920px) and (height: 1080px) {
+@media only screen and (min-width: 1920px) and (min-height: 1080px) {
     body {
         font-family: Arial, sans-serif;
         display: flex;
