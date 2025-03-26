@@ -1,1 +1,1 @@
-Ablage für Grafiken aus dem privat_repo
+Ablage für Grafiken aus privat_repo
